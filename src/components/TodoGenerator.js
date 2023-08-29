@@ -13,9 +13,15 @@ const TodoGenerator = (props) =>{
         inputTodoRef.current.value = null;
     }
 
+    const onInputKeyDown = (e) => {
+        if (e.key === 'Enter') {
+          onSubmitClick();
+        }
+      };
+
     return(
         <div className="TodoGenerator">
-            <input ref={inputTodoRef} type="text" />
+            <input ref={inputTodoRef} type="text" onKeyDown={onInputKeyDown}  />
             <button onClick={onSubmitClick}>add</button>
         </div>
     );
