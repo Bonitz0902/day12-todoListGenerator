@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch } from "react-redux";
 import { addTodo } from "./todoListSlice";
+import { v4 as uuidv4 } from 'uuid';
 
 const TodoGenerator = (props) =>{
     const inputTodoRef = useRef();
@@ -9,7 +10,7 @@ const TodoGenerator = (props) =>{
     const onSubmitClick = () => {
         const newTodo = inputTodoRef.current.value;
         if(newTodo === '') return;
-        dispatch(addTodo(newTodo));
+        dispatch(addTodo({id: uuidv4(), text: newTodo, done: false}));
         inputTodoRef.current.value = null;
     }
 

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from 'uuid';
+
 
 const todoListSlice = createSlice({
   name: "todo",
@@ -8,11 +8,7 @@ const todoListSlice = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-        state.todoList = [...state.todoList, {
-            id: uuidv4(),
-            text: action.payload,
-            done: false
-        }];
+        state.todoList = [...state.todoList, action.payload];
     },
     toggleDone: (state, action) =>{
         const index = state.todoList.findIndex(todo => todo.id === action.payload);
