@@ -9,6 +9,7 @@ const TodoItem = (props) =>{
 
     }
     const handleDelete = (event) => {
+        //TODO: better to check with user before delete
         dispatch(deleteTodo(props.id));
         event.stopPropagation();
     }

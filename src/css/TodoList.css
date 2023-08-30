@@ -35,6 +35,7 @@
 
 .TodoList > .TodoGenerator{
     width: 100%;
+    /*TODO: can adjust height*/
 }
 
 .TodoList > .TodoGenerator > input[type=text]{
